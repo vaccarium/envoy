@@ -58,6 +58,7 @@ class ActiveTcpListener;
  */
 class ConnectionHandlerImpl : public Network::TcpConnectionHandler,
                               public Network::UdpConnectionHandler,
+                              public Network::InternalListenerManager,
                               NonCopyable,
                               Logger::Loggable<Logger::Id::conn_handler> {
 public:
@@ -93,6 +94,10 @@ public:
   // Network::UdpConnectionHandler
   Network::UdpListenerCallbacksOptRef getUdpListenerCallbacks(uint64_t listener_tag) override;
 
+  // Network::IntelListenerManager
+  Network::InternalListenerOptRef
+  findByAddress(const Network::Address::InstanceConstSharedPtr& listen_address) override;
+ 
   /**
    * Wrapper for an active listener owned by this handler.
    */

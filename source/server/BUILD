@@ -104,6 +104,7 @@ envoy_cc_library(
     # and delete this target.
     name = "active_tcp_listener_header",
     hdrs = [
+        "active_stream_socket.h",
         "active_tcp_listener.h",
         "connection_handler_impl.h",
     ],
@@ -135,6 +136,7 @@ envoy_cc_library(
         "active_tcp_listener.h",
     ],
     deps = [
+        ":active_stream_socket",
         "//include/envoy/common:time_interface",
         "//include/envoy/event:deferred_deletable",
         "//include/envoy/event:dispatcher_interface",

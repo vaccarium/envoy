@@ -52,12 +52,12 @@ StderrSinkDelegate::~StderrSinkDelegate() { restoreDelegate(); }
 
 void StderrSinkDelegate::log(absl::string_view msg) {
   Thread::OptionalLockGuard guard(lock_);
-  std::cerr << msg;
+  std::cout << msg;
 }
 
 void StderrSinkDelegate::flush() {
   Thread::OptionalLockGuard guard(lock_);
-  std::cerr << std::flush;
+  std::cout << std::flush;
 }
 
 void DelegatingLogSink::set_formatter(std::unique_ptr<spdlog::formatter> formatter) {

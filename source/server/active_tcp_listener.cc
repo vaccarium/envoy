@@ -12,8 +12,6 @@
 #include "common/network/utility.h"
 #include "common/stats/timespan_impl.h"
 
-#include "server/connection_handler_impl.h"
-
 #include "extensions/transport_sockets/well_known_names.h"
 
 namespace Envoy {

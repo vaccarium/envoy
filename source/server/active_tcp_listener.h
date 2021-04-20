@@ -1,5 +1,7 @@
 #pragma once
 
+#include "envoy/event/dispatcher.h"
+#include "envoy/event/timer.h"
 #include "envoy/stats/timespan.h"
 
 #include "common/common/linked_object.h"
